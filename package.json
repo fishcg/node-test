@@ -1,6 +1,6 @@
 {
   "name": "node-web",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "node-web 服务",
   "main": "server.js",
   "scripts": {

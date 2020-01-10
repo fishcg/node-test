@@ -6,3 +6,4 @@ app.use(async ctx => {
   console.log('sign is: ' + ctx.request.body.sign)
 })
 app.listen(8981)
+console.log('service start - port: 8981')
