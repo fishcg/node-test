@@ -1,6 +1,6 @@
 FROM node:11.1.0-alpine
 
-WORKDIR /home/www/node-test
+WORKDIR /home/www/node-alert
 
 COPY package.json entrypoint.sh ./
 

@@ -1,0 +1,18 @@
+exports.qywxAlert = {
+  exRate: {
+    webhookKey: 'test', // 企业微信 bot webhook key
+    cron: '0 10,19 * * *' // 定时方案
+  },
+}
+
+// 汇率告警阈值，配置国家和对应的阈值
+exports.exRate = {
+  USD: 9.0, // 美元兑人民币的阈值
+  EUR: 8.0, // 欧元兑人民币的阈值
+  THB: 4.5,  // 泰铢兑人民币的阈值
+}
+
+exports.healthTips = [
+  '提升脑力：大脑中75%都是水，保持湿润就像给你的思维加满油！',
+  '水是无可替代的宝贵资源：珍惜每一滴水。',
+]

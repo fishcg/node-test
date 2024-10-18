@@ -1,31 +1,53 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: node-test
+  name: node-alert
 spec:
   type: NodePort
   ports:
-    - port: 8981
+    - port: 8081
       nodePort: 30002
   selector:
-    app: node-test
+    app: node-alert
 ---
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: node-test
+  name: node-alert
 spec:
-  replicas: 2
+  replicas: 1
   selector:
-    app: node-test
+    app: node-alert
   template:
     metadata:
       labels:
-        app: node-test
+        app: node-alert
     spec:
       containers:
-      - name: node-test
-        image: fish.co:8001/node-test:0.0.1
+      - name: node-alert
+        image: fish.co:8001/node-alert:0.0.1
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8981
+        - containerPort: 8081
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: node-alert-cfg
+  labels:
+    app: node-alert
+data:
+  config.js: |
+    exports.qywxAlert = {
+      exRate: {
+        webhookKey: 'test', // 企业微信 bot webhook key
+        cron: '0 10,19 * * *' // 定时方案
+      },
+    }
+      
+      // 汇率告警阈值，配置国家和对应的阈值
+      exports.exRate = {
+    USD: 9.0, // 美元兑人民币的阈值
+    EUR: 8.0, // 欧元兑人民币的阈值
+    THB: 4.5,  // 泰铢兑人民币的阈值
+    }
