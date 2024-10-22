@@ -5,11 +5,25 @@ exports.qywxAlert = {
   },
 }
 
-// 汇率告警阈值，配置国家和对应的阈值
+// 汇率告警阈值，配置国家和对应的汇率标准值
 exports.exRate = {
-  USD: 9.0, // 美元兑人民币的阈值
-  EUR: 8.0, // 欧元兑人民币的阈值
-  THB: 4.5,  // 泰铢兑人民币的阈值
+  TWD: { rate: 0.2223, region: '台湾' },
+  MOP: { rate: 1.12404621, region: '澳门' },
+  MYR: { rate: 0.6046377, region: '马来西亚' },
+  HKD: { rate: 0.91691634, region: '香港' },
+  JPY: { rate: 4.74406743, region: '日本' },
+  USD: { rate: 7.12704897, region: '美国' },
+  SGD: { rate: 5.42133315, region: '新加坡' },
+  KRW: { rate: 192.38057289, region: '韩国' },
+  IDR: { rate: 0.0005, region: '印度尼西亚' },
+  AUD: { rate: 4.77236793, region: '澳大利亚' },
+  CAD: { rate: 5.16524838, region: '加拿大' },
+  GBP: { rate: 9.27304113, region: '英国' },
+  THB: { rate: 4.6572693, region: '泰国' },
+  MXN: { rate: 2.78176041, region: '墨西哥' },
+  EUR: { rate: 7.71692076, region: '欧元区' },
+  VND: { rate: 0.0003, region: '越南' },
+  NZD: { rate: 4.31548863, region: '新西兰' }
 }
 
 exports.healthTips = [
