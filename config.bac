@@ -3,6 +3,13 @@ exports.qywxAlert = {
     webhookKey: 'test', // 企业微信 bot webhook key
     cron: '0 10,19 * * *' // 定时方案
   },
+  metricsTest: {
+    webhookKey: 'test',
+    cron: '50 18 * * 5', // 定时方案
+    prompt: `总结图表内容，分析服务是否正常`,
+    dashboardUid: 'test',
+    startTime: 'now-7d'
+  },
 }
 
 // 汇率告警阈值，配置国家和对应的汇率标准值
@@ -24,6 +31,13 @@ exports.exRate = {
   EUR: { rate: 7.71692076, region: '欧元区' },
   VND: { rate: 0.0003, region: '越南' },
   NZD: { rate: 4.31548863, region: '新西兰' }
+}
+
+exports.AnalyzeService = {
+  URL: 'https://api.test.com/analyze',
+  prompt: `总结图表内容，分析服务是否正常`,
+  dashboardUids: ['test'],
+  startTime: 'now-7d'
 }
 
 exports.healthTips = [
